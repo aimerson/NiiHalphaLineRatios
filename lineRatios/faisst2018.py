@@ -20,10 +20,10 @@ class FaisstModel(object):
         self.MASS = interp2d(ZZ.flatten(),NII.flatten(),MM.flatten())
         return
 
-    def getStellarMass(self,stellarMass,redshift,hubble=None,gridSize=100):
+    def getStellarMass(self,redshift,niiRatio,hubble=None,gridSize=100):
         if self.MASS is None:
             self.buildNiiRedshiftInterpolator(gridSize=gridSize)
-        return self.MASS(stellarMass,redshift)
+        return self.MASS(redshift,niiRatio)
     
 
 
