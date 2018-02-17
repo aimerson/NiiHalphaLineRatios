@@ -23,7 +23,10 @@ class FaisstModel(object):
     def getStellarMass(self,redshift,niiRatio,hubble=None,gridSize=100):
         if self.MASS is None:
             self.buildNiiRedshiftInterpolator(gridSize=gridSize)
-        return self.MASS(redshift,niiRatio)
+        mass = self.MASS(redshift,niiRatio)
+        if hubble is not None:
+            mass += np.log10(self.hubble/hubble)
+        return mass
     
 
 
