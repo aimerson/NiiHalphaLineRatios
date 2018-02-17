@@ -4,7 +4,7 @@ import sys,os
 import numpy as np
 import pkg_resources
 from scipy.spatial import cKDTree
-
+from .utils.progress import Progress
 
 def buildMastersSDSSNumpy():
     import pyfits
@@ -57,13 +57,13 @@ class MastersSDSS(object):
         self.tree = cKDTree(data)
         return
 
-    def getLineRatio(self,stellarMass,starformationRate,neighbours=10,statistic="mean",hubble=None):
+    def getLineRatio(self,stellarMass,starFormationRate,neighbours=10,statistic="mean",hubble=None):
         funcname = self.__class__.__name__+"."+sys._getframe().f_code.co_name
         if not self.tree:
             self.buildKDTree(hubble=hubble)        
         ratioNIIHa = np.zeros_like(np.copy(stellarMass))*np.nan
-        data = np.zeros((len(stellarMass),2),dtype=float)
-        mask = np.logical_and(stellarMass>0.0,starformationRate>0.0)        
+        mask = np.logical_and(stellarMass>0.0,starFormationRate>0.0)        
+        data = np.zeros((len(stellarMass[mask]),2),dtype=float)
         data[:,0] = np.log10(stellarMass[mask])
         data[:,1] = np.log10(starFormationRate[mask]) - np.log10(stellarMass[mask])
         diff,idiff = self.tree.query(data,k=neighbours)
