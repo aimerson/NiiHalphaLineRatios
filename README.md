@@ -1,6 +1,6 @@
-# [NII] Halpha Line Ratios
+# [NII]/Halpha Line Ratios
 
-Python package of model presented in [Faisst et al. (2018)](http://adsabs.harvard.edu/abs/2018ApJ...855..132F) to model the [NII]/Halpha line ratio fo galaxies as a function of their stellar mass and redshift. Package also allows interpolation of data from [Masters et al. (2016)](http://adsabs.harvard.edu/abs/2016ApJ...828...18M), as was done in [Merson et al. (2018)](http://adsabs.harvard.edu/abs/2018MNRAS.474..177M).
+Python package of model presented in [Faisst et al. (2018)](http://adsabs.harvard.edu/abs/2018ApJ...855..132F) to model the [NII]/Halpha line ratio of galaxies as a function of their stellar mass and redshift. Package also allows interpolation of data from [Masters et al. (2016)](http://adsabs.harvard.edu/abs/2016ApJ...828...18M), as was done in [Merson et al. (2018)](http://adsabs.harvard.edu/abs/2018MNRAS.474..177M).
 
 # Installation
 ```
