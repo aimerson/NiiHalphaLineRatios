@@ -1,4 +1,9 @@
 #! /usr/bin/env python
+"""
+Example script to demonstrate usage of Faisst et al. model to reproduce 
+figure 5 from the Faisst et al. (2018) paper.
+
+"""
 
 import numpy as np
 from lineRatios.plotting.utils import *
