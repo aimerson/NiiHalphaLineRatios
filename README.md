@@ -12,7 +12,10 @@ python setup.py install
 Users without root access may need to replace the last step with `python setup.py install --user`.
 
 # Dependencies
-Only standard libraries for core usage. For rebuilding the Masters et al. (2016) data file users will need to have [pyfits](https://pythonhosted.org/pyfits/) installed.
+Numpy
+Scipy
+
+For rebuilding the Numpy version of the Masters et al. (2016) data file users will need to have [pyfits](https://pythonhosted.org/pyfits/) installed.
 
 # Example usage
 Example scripts demonstrating the classes and functions in the Faisst et al. module are stored in the *examples* subdirectory.
