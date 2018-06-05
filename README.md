@@ -12,8 +12,8 @@ python setup.py install
 Users without root access may need to replace the last step with `python setup.py install --user`.
 
 # Dependencies
-Numpy
-Scipy
+* Numpy
+* Scipy
 
 For rebuilding the Numpy version of the Masters et al. (2016) data file users will need to have [pyfits](https://pythonhosted.org/pyfits/) installed.
 
