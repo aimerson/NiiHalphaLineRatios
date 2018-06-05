@@ -32,17 +32,17 @@ class FaisstModel(object):
         f = interp1d(MASS,NII)
         return f(mass)
 
-    def perturbNII(self,nii,z,sigma=None):
+    def perturbNII(self,nii,z,sigma=None,**kwargs):
         if sigma is None:
             redshifts = [0.0,1.6,2.3]
             errors = [0.13,0.21,0.22]
             zz = np.linspace(0.0,2.3,1000)
             err = spline(redshifts,errors,zz,order=2)
-            f = interp1d(zz,err,kind='linear',fill_value='extrapolate')
+            f = interp1d(zz,err,**kwargs)
             sigma = f(z)
         return np.random.normal(loc=nii,scale=sigma)
     
-    def getN2(self,mass,redshift,hubble=None,perturb=False,sigma=None):
+    def getN2(self,mass,redshift,hubble=None,perturb=False,sigma=None):        
         if hubble is not None:
             mass += np.log10(hubble/self.hubble)
         nii = np.array([self.interpolateN2Grid(z,m) for z,m in zip(redshift,mass)])
